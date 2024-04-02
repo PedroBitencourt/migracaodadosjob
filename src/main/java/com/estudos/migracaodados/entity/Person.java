@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.util.Date;
 
+import static org.apache.logging.log4j.util.Strings.isNotBlank;
+
 @Getter
 @Setter
 @Builder
@@ -20,4 +22,8 @@ public class Person {
     private Date birthDate;
 
     private int age;
+
+    public boolean isValid() {
+        return isNotBlank(name) && isNotBlank(email) && birthDate != null;
+    }
 }
