@@ -25,7 +25,7 @@ public class PersonMigrationStepConfig {
                                     ClassifierCompositeItemWriter<Person> personClassifierWriter,
                                     FlatFileItemWriter<Person> invalidPersonWriter) {
         return new StepBuilder("personMigrationStep", jobRepository).
-                <Person, Person>chunk(1, transactionManager)
+                <Person, Person>chunk(10000, transactionManager)
                 .reader(personItemReader)
                 .writer(personClassifierWriter)
                 .stream(invalidPersonWriter)

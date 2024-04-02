@@ -22,7 +22,7 @@ public class BankDataMigrationStepConfig {
     @Bean
     public Step bankDataMigrationStep(ItemReader<BankData> bankDataItemReader, ItemWriter<BankData> bankDataItemWriter) {
         return new StepBuilder("bankDataMigrationStep", jobRepository).
-                <BankData, BankData>chunk(1, transactionManager)
+                <BankData, BankData>chunk(10000, transactionManager)
                 .reader(bankDataItemReader)
                 .writer(bankDataItemWriter)
                 .build();
