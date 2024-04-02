@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS pessoa;
-CREATE TABLE pessoa(id INT, nome VARCHAR(500),email VARCHAR(500),data_nascimento DATETIME,idade INT, PRIMARY KEY(id));
-DROP TABLE IF EXISTS dados_bancarios;
-CREATE TABLE dados_bancarios(id INT, pessoa_id INT,agencia INT, conta INT, banco INT , PRIMARY KEY(id));
+DROP TABLE IF EXISTS person;
+CREATE TABLE person(id INT, name VARCHAR(500),email VARCHAR(500),birthDate DATETIME,age INT, PRIMARY KEY(id));
+DROP TABLE IF EXISTS bank_data;
+CREATE TABLE bank_data(id INT, person_id INT,agency INT, account INT, bank INT , PRIMARY KEY(id));
